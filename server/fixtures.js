@@ -23,7 +23,7 @@ if (Posts.find().count() === 0) {
 	Comments.insert({
 		postId: telescopeId,
 		userId: tom._id,
-		authorL tom.profile.name,
+		author: tom.profile.name,
 		submitted: now - 5 * 3600 * 1000,
 		body: 'Interesting project Sacha, can I get involved?'
 	});
@@ -32,7 +32,7 @@ if (Posts.find().count() === 0) {
 		postId: telescopeId,
 		userId: sacha._id,
 		author: sacha.profile.name,
-		submitted: now - 3 * 3600 * 1000.
+		submitted: now - 3 * 3600 * 1000,
 		body: 'You sure can Tom!'
 	});
 
@@ -40,7 +40,7 @@ if (Posts.find().count() === 0) {
 		title: 'Meteor',
 		userId: tom._id,
 		author: tom.profile.name,
-		url: 'http://meteor.com',,
+		url: 'http://meteor.com',
 		submitted: now - 10 * 3600 * 1000
 	});
 
