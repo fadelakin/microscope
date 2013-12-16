@@ -3,15 +3,15 @@ Template.postsList.helpers({
 		return Posts.find({}, {sort: {submitted: -1}, limit: postsHandle.limit()});
 	},
 	postsReady: function() {
-		return ! postsHandle.loading();
+		return ! postsHandle.ready();
 	},
 	allPostsLoaded: function() {
-		return ! postsHandle.loading() && Posts.find().count() < postsHandle.loaded();
+		return ! postsHandle.ready() && Posts.find().count() < postsHandle.loaded();
 	}
 });
 
 Template.postsList.events({
-	'click .more-link': function(event) {
+	'click .load-more': function(event) {
 		event.preventDefault();
 		postsHandle.loadNextPage();
 	}
